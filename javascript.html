@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Calculate() {
+            var num1 = document.getElementById("Text1").value;
+            var num2 = document.getElementById("Text2").value;
+            var regneart = document.getElementById("SelectRegneArt").value;
+
+            //vi må gjøre om fra tekst til tall. Alt fra tekstfelt er tekst. Vi bruker parseInt()
+            num1 = parseInt(num1);
+            num2 = parseInt(num2)
+           
+            if (num1 && num2) {//vi sjekker om vi har en verdi i tekstfeltene
+                //alert(regneart);
+                if (regneart == "+") {
+                    document.getElementById("TextSvar").value = num1+num2;
+                }
+            }
+            else {
+                document.getElementById("TextSvar").value = "Må ha tall i begge tekstfelt!";
+            }
+        }//her er Calculate-funksjonen slutt
+
+        //ny funskjon
+        function TestPrompt() {
+            var tekst = prompt("Skriv noe!")
+            alert("Du skrev: " + tekst);
+        }
+
+        function EndreBackground() {
+            var color = prompt("Tast inn en fargekode!")
+            //din kode her
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Avansert kalkulator</h1>
+    <p>Fortsett videre med denne kalkulatoren. Nå er det kun +. Vi trenger også å ha de andre regneartene med.</p>
+    <input id="Text1" type="text" />
+    <select id="SelectRegneArt">
+        <option>+</option>
+    </select>
+    
+    <input id="Text2" type="text" />
+    <button onclick="Calculate()">=</button>
+    <br /><br />
+    Svar<br />
+    <input id="TextSvar" type="text" />
+
+    <h2>Ta bort de 2 linjene hvor det brukes parseInt. Hva skjer? Hvorfor?</h2>
+
+    <hr />
+    <h1>Lese inn verdi fra bruker med "prompt"</h1>
+    <button onclick="TestPrompt()">Test prompt</button>
+
+    <h2>Nå som vi vet hvordan prompt virker, lag en funskjon som leser inn antall kilometer og konverterer det til miles.</h2>
+    <p>Her er et tips: var miles = kilometers / 1.6; Vis resultatet i en alert.</p>
+
+    <hr />
+    <h1>Endre bakgrunnsfarge</h1>
+    <p>Tips: document.body.style.....</p>
+    <button onclick="EndreBackground">Endre bakgrunnsfarge på siden</button>
+    <hr />
+    <h1>Lag en valgfri funksjon. Ingen ideer? Hva med å konvertere fra celcius til fahrenheit?</h1>
+   
+</body>
+</html>

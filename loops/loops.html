@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Quiz</h2>
+
+
+
+
+
+<script>
+function myQuiz() {
+	var antallRette=0;
+    
+  	var svar=prompt("Hvem heter rektoren på Glemmen?");
+  	if(svar=="Pål Andre Ramberg"){
+   		alert("Riktig!");
+   		antallRette++;
+  	}
+    else
+    	//kode for å varsle bruker om at svaret er feil. gi også brukeren det rette svaret her. Bruk alert()?
+    
+    svar=prompt("Hvor mange Matrix-filmer er det?");
+  	if(svar=="3"){
+   		alert("Riktig!");
+   		antallRette++;
+  	}
+    alert("Quiz ferdig. Du fikk " + antallRette + " rett.");
+}
+
+function epler(){
+	//Her skriver vi helt lik kode 3 ganger. Finnes det en annen, og lettere, måte å gjøre dette på?
+	document.write("<img src='eple.jpg'>");
+	document.write("<img src='eple.jpg'>");
+	document.write("<img src='eple.jpg'>");
+}
+
+function fibo(){
+		
+	    var tallA = 0;
+        var tallB = 1;
+        var tallF = tallA + tallB;
+        document.write(tallA + ", " + tallB + ", ");
+        document.write(tallF + ", ");
+        for(var i = 0; i <= 5; i++){//denne loopen går fra 0 til 5
+            tallA = tallB;
+            tallB = tallF;
+            tallF = tallA + tallB;           
+            //Vi skriver ut til dokumentet
+            document.write(tallF + ", ");//Hmm. Når vi er på det siste tallet, trenger vi ikke et komma.
+                        
+        }
+}
+
+function fibo2(){//Ganske så lik den første fibo-kode, men her er det bruker som bestemmer antall tall.
+		//var antallTall=//input fra bruker
+	    var tallA = 0;
+        var tallB = 1;
+        var tallF = tallA + tallB;
+        document.write(tallA + ", " + tallB + ", ");
+        document.write(tallF + ", ");
+        for(var i = 0; i <= 5; i++){//loopen går fremdeles fra 0 til 5. Hint hint.
+            tallA = tallB;
+            tallB = tallF;
+            tallF = tallA + tallB;
+            //vi skriver ut til dokumentet.
+            document.write(tallF + ", ");//Hmm. Når vi er på det siste tallet, trenger vi ikke et komma
+        }
+}
+</script>
+
+<p>Koden i denne fila inneholder en funksjon for en quiz. Det er nå kun 2 spørsmål. Lag totalt 10 spørsmål.</p>
+<p>Legg også på en else for hvert spørsmål.</p>
+<p>Svarene som kommer inn nå er case-sensitive. Dvs. at Arthur ikke er det samme som arthur. Gjør noe med dette i koden. Google dette.<br>
+<button onclick="myQuiz()">Start quiz</button>
+<hr>
+<h2>Mange epler</h2>
+<button onclick="epler()">Vis eplene!</button>
+Her kommer det ut 3 epler. Se i koden hvordan dette gjøres. Løs denne oppgaven ved å bruke en for-loop. Sjekk denne: https://www.w3schools.com/JSREF/tryit.asp?filename=tryjsref_state_for <br>for å lære deg for-loop.
+<hr>
+<h2>Fibonacci</h2>
+<p>Leonardo Fibonacci var en italiensk matematiker fra Pisa i Nord-Italia. Han er mest kjent for tallfølgen som er oppkalt etter ham, Fibonacci-tallene. De består av 0,1,1,2,3,5,8,13,21, ... Hvert tall i følgen er summen av de to foregående</p>
+<p>I denne oppgaven er koden for å generere disse tallene lagd. Men den kan forbedres noe. Feks. kommer det et komma etter det siste tallet. Kom med en løsning slik at det ikke skjer. Tips: Du trenger en if. Hvor er vi i loopen?</p>
+<button onclick="fibo()">Kjør Fibonacci</button>
+<hr>
+<h2>Mer Fibonacci</h2>
+<p>Nå skrives det kun et bestemt antall tall. Lag en funksjon hvor brukeren kan taste inn hvor mange tall som skal genereres. Tips: prompt. Prøv etterhvert mange tall. Hva skjer? Hvorfor?</p>
+<button onclick="fibo2()">Kjør Fibonacci v.2</button>
+</body>
+</html>

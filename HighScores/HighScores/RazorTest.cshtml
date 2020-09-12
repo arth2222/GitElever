@@ -1,0 +1,36 @@
+﻿@using WebMatrix.Data
+@{
+    Layout = null;
+}
+
+@{
+    var db = Database.Open("hsconnstrLocalDB");
+    var selectQueryString = "SELECT * FROM HS";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Razor and DB</title>
+    <link href="~/styles/style.css" rel="stylesheet" />d
+</head>
+<body>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Score</th>
+                <th>UserName</th>
+            </tr>
+            @foreach (var row in db.Query(selectQueryString))
+            {
+                <tr>
+                    <td>@row.Id</td>
+                    <td>@row.Score</td>
+                    <td>@row.UserName</td>
+                </tr>
+            }
+        </table>
+    </body>
+</html>

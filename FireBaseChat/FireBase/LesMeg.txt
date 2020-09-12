@@ -1,0 +1,24 @@
+Koden i denne mappen virker 100%.
+For å lage sin egen Firebase-database, må man logge seg på firebase console med en gmailkonto.
+Når databasen er opprettet, bytt ut "firebaseConfig" med de verdiene du har fått fra firebase console.
+Disse verdiene skal inn i html-filen. (Eller om man bruker andre filtyper som feks. php, aspx etc). Se i fila index.html.
+
+Når alt er på plass må det testes. Ser det bra ut? Feilmeldinger i console? (Klikk F12). Kan vi chatte med andre? Altså 
+er vi online? Her kommer del 2 inn. Vi må publisere dette prosjektet til en webserver slik at andre får tilgang.
+De nye pc-ene vi har fått kan settes opp som en webserver for å "hoste" vår chatapplikasjon. (Ja, pc-en kan brukes 
+til andre ting enn Minecraft...)
+
+Webserveren på Windows heter "IIS", og må antageligvis legges til fra kontrollpanel. Når vi har vårt LAN klart, kan vi surfe på hverandres webservere ved å bruke de lokale ip-adressene som en url. Eventuelt datamaskinnavnet. Som feks:
+http://192.168.1.2/chat 
+
+Vi skal også opprette en server som andre utenfor vårt LAN får tilgang til. Da må porten i ruteren åpnes opp for webtrafikk. 
+
+Dette skal vi ta felles. 
+
+For de som lurer. Meldingene som blir sendt, lagres på firebasedatabasen, som er eid av Google.
+
+Les denne for mer forståelse:
+https://adnan-tech.com/realtime-web-based-chat-in-firebase/
+
+Live demo her: http://stimrai.bergersen.dk/firebasechat/
+
